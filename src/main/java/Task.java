@@ -21,6 +21,12 @@ public class Task {
 
     @Override
     public String toString() {
-        return (getDescription());
+        String output;
+        if (isDone) {
+            output = "[X] " + description;
+        } else {
+            output = "[ ] " + description;
+        }
+        return output;
     }
 }
