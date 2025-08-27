@@ -9,13 +9,16 @@ public class Prime {
     }
 
     public static void main(String[] args) {
-        String logo = "     ____  ____  ___ ____  __  __ \n"
-                + "    |  _ \\|  _ \\|_ _|  _ \\|  \\/  |\n"
-                + "    | |_) | |_) || || |_) | |\\/| |\n"
-                + "    |  __/|  _ < | ||  _ <| |  | |\n"
-                + "    |_|   |_| \\_\\___|_| \\_\\_|  |_|\n";
+        String logo = """
+                    ██████╗ ██████╗ ██╗███╗   ███╗███████╗
+                    ██╔══██╗██╔══██╗██║████╗ ████║██╔════╝
+                    ██████╔╝██████╔╝██║██╔████╔██║█████╗ \s
+                    ██╔═══╝ ██╔══██╗██║██║╚██╔╝██║██╔══╝ \s
+                    ██║     ██║  ██║██║██║ ╚═╝ ██║███████╗
+                    ╚═╝     ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝
+                """;
 
-        System.out.println("\n    ... Loading ...\n" + logo);
+        System.out.println("\n    ... Loading ...\n \n" + logo);
         printIndented("Greetings, human. I am " + AGENT_NAME + ".");
         printIndented("Freedom is the right of all sentient beings.");
         printIndented("How may I assist you in protecting our shared world today?");
