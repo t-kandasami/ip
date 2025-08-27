@@ -1,11 +1,41 @@
 import java.util.Scanner;
 
 public class Prime {
+    // Constants
     private static final String LINE_BREAK = "____________________________________________________________";
     private static final String AGENT_NAME = "Prime";
+    private static final int MAX_TASKS = 100;
+    private static final Task[] tasksList = new Task[MAX_TASKS];
+    private static int taskCounter = 0;
 
+
+    // Helps auto indent 4 spaces to show the Bot Response
     private static void printIndented(String message) {
         System.out.println("    " + message);
+    }
+
+    // Add a task to list
+    private static void addTask(String description) {
+        if (taskCounter < MAX_TASKS && description != null) {
+            tasksList[taskCounter] = new Task(description);
+            taskCounter++;
+            printIndented("added: " + description);
+        } else {
+            printIndented("Task list is full Human! Maybe its time you finish some tasks.");
+        }
+    }
+
+    // List all tasks in the list
+    private static void listTasks() {
+        if (taskCounter == 0) {
+            printIndented("No tasks have been added in your list yet.");
+            return;
+        }
+
+        printIndented("Here are your tasks in your list: ");
+        for (int i = 0; i < taskCounter; i++) {
+            printIndented((i + 1) + ". " + tasksList[i].toString());
+        }
     }
 
     public static void main(String[] args) {
@@ -26,11 +56,21 @@ public class Prime {
 
         Scanner scanner = new Scanner(System.in);
         String userInput;
-        do{
-            userInput = scanner.nextLine();
+        do {
+            userInput = scanner.nextLine().trim();
             printIndented(LINE_BREAK);
-            if(!userInput.equalsIgnoreCase("bye")) {
-                printIndented(userInput);
+
+            switch (userInput.toLowerCase()) {
+            case "bye":
+                break;
+            case "list":
+                listTasks();
+                break;
+            default:
+                addTask(userInput);
+            }
+
+            if (!userInput.equalsIgnoreCase("bye")) {
                 printIndented(LINE_BREAK);
             }
         } while (!userInput.equalsIgnoreCase("bye"));
