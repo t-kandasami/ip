@@ -7,26 +7,16 @@ public class Task {
         this.isDone = false;
     }
 
-    public String getDescription() {
-        return description;
+    public boolean getIsDone() {
+        return this.isDone;
     }
 
-    public void setAsDone() {
-        this.isDone = true;
-    }
-
-    public void setAsNotDone() {
-        this.isDone = false;
+    public void setIsDone(boolean isDone) {
+        this.isDone = isDone;
     }
 
     @Override
     public String toString() {
-        String output;
-        if (isDone) {
-            output = "[X] " + description;
-        } else {
-            output = "[ ] " + description;
-        }
-        return output;
+        return this.description;
     }
 }
