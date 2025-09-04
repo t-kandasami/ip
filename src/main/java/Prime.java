@@ -13,7 +13,7 @@ public class Prime {
         System.out.println("    " + message);
     }
 
-    private static void addDeadline (String description, String by) {
+    private static void addDeadline(String description, String by) {
         if (taskCounter < MAX_TASKS && description != null && by != null) {
             tasksList[taskCounter] = new Deadline(description, by);
             printIndented("Got it. I've added this task:");
@@ -25,10 +25,10 @@ public class Prime {
         }
     }
 
-    private static void addEvent (String description, String from, String to) {
-        if (taskCounter < MAX_TASKS && description != null &&  from != null && to != null) {
+    private static void addEvent(String description, String from, String to) {
+        if (taskCounter < MAX_TASKS && description != null && from != null && to != null) {
             tasksList[taskCounter] = new Event(description, from, to);
-            printIndented("Got it. I've added this task: \n");
+            printIndented("Got it. I've added this task:");
             printIndented(tasksList[taskCounter].toString());
             taskCounter++;
             printIndented("Now you have " + taskCounter + " tasks in your task list.");
@@ -37,10 +37,10 @@ public class Prime {
         }
     }
 
-    private static void addToDo (String description) {
+    private static void addToDo(String description) {
         if (taskCounter < MAX_TASKS && description != null) {
             tasksList[taskCounter] = new ToDo(description);
-            printIndented("Got it. I've added this task: \n");
+            printIndented("Got it. I've added this task:");
             printIndented(tasksList[taskCounter].toString());
             taskCounter++;
             printIndented("Now you have " + taskCounter + " tasks in your task list.");
@@ -55,7 +55,7 @@ public class Prime {
             printIndented("No tasks have been added in your list yet.");
             return;
         }
-        printIndented("Here are your tasks in your list: ");
+        printIndented("Here are your tasks in your list:");
         for (int i = 0; i < taskCounter; i++) {
             printIndented((i + 1) + "." + tasksList[i].toString());
         }
@@ -63,7 +63,7 @@ public class Prime {
 
     private static void toggleMarkTask(int taskNo) {
         if (taskNo >= 1 && taskNo <= taskCounter) {
-            if (tasksList[taskNo - 1].getIsDone()){
+            if (tasksList[taskNo - 1].getIsDone()) {
                 tasksList[taskNo - 1].setIsDone(false);
                 printIndented("Ok Human! I've marked this task as not done yet:");
             } else {
@@ -112,16 +112,10 @@ public class Prime {
     }
 
     public static void main(String[] args) {
-        String logo = """
-                    ██████╗ ██████╗ ██╗███╗   ███╗███████╗
-                    ██╔══██╗██╔══██╗██║████╗ ████║██╔════╝
-                    ██████╔╝██████╔╝██║██╔████╔██║█████╗ \s
-                    ██╔═══╝ ██╔══██╗██║██║╚██╔╝██║██╔══╝ \s
-                    ██║     ██║  ██║██║██║ ╚═╝ ██║███████╗
-                    ╚═╝     ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝
-                """;
 
-        System.out.println("\n    ... Loading ...\n \n" + logo);
+        // Due to some encoding issue there is an issue with comparing PRIME Logo with EXPECTED.TXT
+        // System.out.println("\n    ... Loading ...\n \n" + logo);
+        //System.out.println("\n    ... Loading ...\n \n");
         printIndented("Greetings, human. I am " + AGENT_NAME + ".");
         printIndented("Freedom is the right of all sentient beings.");
         printIndented("How may I assist you in protecting our shared world today?");
@@ -153,8 +147,7 @@ public class Prime {
                 addDeadline(parseDeadlineDescription(userInput), parseBy(userInput));
             } else if (userInput.startsWith("event ")) {
                 addEvent(parseEventDescription(userInput), parseFrom(userInput), parseTo(userInput));
-            }
-            else {
+            } else {
                 switch (userInput) {
                 case "bye":
                     break;
