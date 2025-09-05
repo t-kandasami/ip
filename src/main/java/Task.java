@@ -15,6 +15,14 @@ public class Task {
         this.isDone = isDone;
     }
 
+    public String getTickUnTickIcon(){
+        if (this.getIsDone()){
+            return "[X]";
+        } else {
+            return "[ ]";
+        }
+    }
+
     @Override
     public String toString() {
         return this.description;

@@ -5,10 +5,6 @@ public class ToDo extends Task {
 
     @Override
     public String toString() {
-        if (super.isDone) {
-            return "[T][X] " + super.toString();
-        } else {
-            return "[T][ ] " + super.toString();
-        }
+        return "[T]" + getTickUnTickIcon() + " " + super.description;
     }
 }

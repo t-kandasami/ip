@@ -10,10 +10,6 @@ public class Event extends Task {
 
     @Override
     public String toString() {
-        if (super.isDone) {
-            return "[E][X] " + super.toString() + " (from: " + this.from + " to: " + this.to + ")";
-        } else {
-            return "[E][ ] " + super.toString() + " (from: " + this.from + " to: " + this.to + ")";
-        }
+        return "[E]" + getTickUnTickIcon() + " " + super.description + " (from: " + this.from + " to: " + this.to + ")";
     }
 }

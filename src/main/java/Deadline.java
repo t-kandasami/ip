@@ -8,10 +8,6 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        if (super.isDone) {
-            return "[D][X] " + super.toString() + " (by: " + by + ")";
-        } else {
-            return "[D][ ] " + super.toString() + " (by: " + by + ")";
-        }
+        return "[D]" + getTickUnTickIcon() + " " + super.description + " (by: " + by + ")";
     }
 }
