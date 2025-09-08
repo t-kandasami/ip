@@ -7,21 +7,9 @@ public class UserInterface {
         System.out.println("    " + message);
     }
     public void printLineBreak() {
-        System.out.println(LINE_BREAK);
+        this.printIndented(LINE_BREAK); 
     }
-
-    public void printLogo(){
-        String logo = """
-                    ██████╗ ██████╗ ██╗███╗   ███╗███████╗
-                    ██╔══██╗██╔══██╗██║████╗ ████║██╔════╝
-                    ██████╔╝██████╔╝██║██╔████╔██║█████╗ \s
-                    ██╔═══╝ ██╔══██╗██║██║╚██╔╝██║██╔══╝ \s
-                    ██║     ██║  ██║██║██║ ╚═╝ ██║███████╗
-                    ╚═╝     ╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚══════╝
-                """;
-        printIndented(logo);
-    }
-
+    
     public void printWelcomeMessage() {
         printIndented("Greetings, human. I am " + AGENT_NAME + ".");
         printIndented("Freedom is the right of all sentient beings.");
@@ -30,7 +18,7 @@ public class UserInterface {
     }
 
     public void printByeMessage() {
-        printIndented("Bye Human, I wish you a nice. Hope to see you again soon!");
+        printIndented("Bye Human, I wish you a nice day. Hope to see you again soon!");
         printLineBreak();
     }
 }
