@@ -1,3 +1,10 @@
+package prime.manager;
+
+import prime.exceptions.InvalidTaskNumberException;
+import prime.exceptions.PrimeException;
+import prime.task.Task;
+import prime.ui.UserInterface;
+
 public class TaskManager {
     private static final int MAX_TASKS = 100;
     private final Task[] tasks = new Task[MAX_TASKS];
