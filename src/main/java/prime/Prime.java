@@ -1,3 +1,19 @@
+package prime;
+
+import prime.exceptions.EmptyByException;
+import prime.exceptions.EmptyDescriptionException;
+import prime.exceptions.EmptyFromException;
+import prime.exceptions.InvalidCommandException;
+import prime.exceptions.PrimeException;
+import prime.parser.Command;
+import prime.parser.CommandType;
+import prime.parser.Parser;
+import prime.manager.TaskManager;
+import prime.task.Deadline;
+import prime.task.Event;
+import prime.task.ToDo;
+import prime.ui.UserInterface;
+
 import java.util.Scanner;
 
 public class Prime {
