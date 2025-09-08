@@ -1,3 +1,5 @@
+package prime.parser;
+
 public class Parser {
     // Hardcoding the Constants
     private static final String BY = "/by";

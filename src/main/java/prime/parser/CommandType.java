@@ -1,3 +1,5 @@
+package prime.parser;
+
 public enum CommandType {
     BYE,
     LIST,

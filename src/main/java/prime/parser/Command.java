@@ -1,3 +1,5 @@
+package prime.parser;
+
 public class Command {
     private final CommandType type;
     private final String arguments;
