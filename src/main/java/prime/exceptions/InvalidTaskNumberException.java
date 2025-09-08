@@ -1,3 +1,5 @@
+package prime.exceptions;
+
 public class InvalidTaskNumberException extends PrimeException {
     public InvalidTaskNumberException(int taskNo, int max) {
         super("Invalid task number of " + taskNo + "! Please try again." +
