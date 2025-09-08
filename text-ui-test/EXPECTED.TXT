@@ -61,7 +61,7 @@
     3.[E][X] project meeting (from: Monday 2pm to: 4pm)
     ____________________________________________________________
     ____________________________________________________________
-    Invalid task number! Please try again.
+    Invalid task number of 4! Please try again.
     You are allowed to enter a number between 1 and 3
     ____________________________________________________________
     ____________________________________________________________
