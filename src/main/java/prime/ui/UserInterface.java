@@ -1,3 +1,5 @@
+package prime.ui;
+
 public class UserInterface {
     private static final String LINE_BREAK = "____________________________________________________________";
     private static final String AGENT_NAME = "Prime";
