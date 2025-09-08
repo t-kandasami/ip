@@ -3,7 +3,7 @@ public class TaskManager {
     private final Task[] tasks = new Task[MAX_TASKS];
     private int taskCounter = 0;
 
-    public void addTask(Task task, UserInterface ui) {
+    public void addTask(Task task, UserInterface ui) throws PrimeException {
         if (taskCounter < MAX_TASKS) {
             tasks[taskCounter] = task;
             ui.printIndented("Got it. I've added this task:");
@@ -11,7 +11,7 @@ public class TaskManager {
             taskCounter++;
             ui.printIndented("Now you have " + taskCounter + " tasks in your task list.");
         } else {
-            ui.printIndented("Task list is full Human! Maybe it’s time you finish some tasks.");
+            throw new PrimeException("Task list is full Human! Maybe it’s time you finish some tasks.");
         }
     }
 
@@ -26,11 +26,9 @@ public class TaskManager {
         }
     }
 
-    public void toggleMark(int taskNo, UserInterface ui) {
+    public void toggleMark(int taskNo, UserInterface ui) throws InvalidTaskNumberException {
         if (taskNo < 1 || taskNo > taskCounter) {
-            ui.printIndented("Invalid task number! Please try again.");
-            ui.printIndented("You are allowed to enter a number between 1 and " + taskCounter);
-            return;
+            throw new InvalidTaskNumberException(taskNo,taskCounter);
         }
         Task task = tasks[taskNo - 1];
         task.setIsDone(!task.getIsDone());
